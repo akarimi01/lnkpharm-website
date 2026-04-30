@@ -1,0 +1,6 @@
+# Netlify automatically:
+#  • Serves /about → /about.html (when pretty_urls is on, set in netlify.toml)
+#  • Serves /index.html for the root /
+#
+# This file is intentionally minimal — explicit rules left here for future use.
+# (Netlify's default 404 page is good; we don't override it.)

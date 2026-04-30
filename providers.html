@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78M94RK5H6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-78M94RK5H6');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wjzqqkyqda");
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LNK Pharmacy Solutions — For providers & clinics</title>
+  <link rel="stylesheet" href="fonts/figtree.css">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Figtree", system-ui, sans-serif;
+      background: #FAF8F4;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    #root { min-height: 100vh; }
+    a { color: inherit; }
+    ::selection { background: rgba(20,184,166,0.22); }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <meta name="ext-resource-dependency" content="assets/logo-dark-context.svg">
+  <meta name="ext-resource-dependency" content="assets/logo-light-context.svg">
+</head>
+<body>
+  
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <rect width="400" height="400" fill="#1E2F4A"/>
+      <g transform="translate(200 210)">
+        <path d="M -80 60 Q -82 58 -78 55 L -18 -68 Q -15 -74 -12 -70 L 70 58 Q 72 61 68 62 L -75 61 Q -79 61 -80 60 Z"
+              fill="none" stroke="#5DCAA5" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M -14 -62 L 64 58" fill="none" stroke="#5DCAA5" stroke-width="1.8" opacity=".5"/>
+      </g>
+      <text x="200" y="340" text-anchor="middle" font-family="Figtree, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FAF8F4" letter-spacing="0.5">LNK · Providers</text>
+    </svg>
+  </template>
+  <div id="root"></div>
+
+  <!-- Primitives -->
+  <script type="text/babel" data-presets="react" src="components/Button.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Header.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Footer.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/StatRow.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ServiceCard.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ArcSteps.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/CtaBlock.jsx"></script>
+
+  <!-- Provider-specific blocks -->
+  <script type="text/babel" data-presets="react" src="components/ProviderHero.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ScopeOfPractice.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/HowWeEmbed.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Testimonials.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    const ProvidersPage = () => {
+      const [route, setRoute] = React.useState('providers');
+
+      const go = (r) => {
+        // Homepage routing: navigate back to index.html for cross-page links
+        if (r === 'home') { window.location.href = 'index.html'; return; }
+        if (r === 'contact') { window.location.href = 'contact.html?lane=provider'; return; }
+        if (r === 'patients') { window.location.href = 'patients.html'; return; }
+        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
+        if (r === 'about') { window.location.href = 'about.html'; return; }
+        if (r === 'about') {
+          // For now, stub: stay on page, scroll to top
+          setRoute(r);
+          window.scrollTo({ top: 0 });
+          return;
+        }
+        setRoute(r);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      return (
+        <div data-screen-label="03 Providers">
+          <Header context="dark" current="providers" onNavigate={go} />
+
+          {/* 1. HERO — navy with reassurance row */}
+          <ProviderHero onSelect={go} />
+
+          {/* 2. PARTNER STRIP — credibility up front */}
+          <PartnersStrip />
+
+          {/* 3. PROOF STATS */}
+          <StatRow
+            variant="light"
+            stats={[
+              { value: '9,000', unit: '+', caption: 'Patient cases resolved since July 2023.' },
+              { value: '94', unit: '%', caption: 'Medication prior authorization approval rate.' },
+              { value: '30', unit: 'hrs',  caption: 'Clinical staff time returned weekly per partner.' },
+              { value: '21', unit: '',     caption: 'Providers served across our current partner clinics.' },
+            ]}
+          />
+
+          {/* 4. SCOPE OF PRACTICE — the reassurance block */}
+          <ScopeOfPractice />
+
+          {/* 5. SERVICES — navy */}
+          <section style={{
+            background: '#1E2F4A',
+            padding: '120px 24px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}>
+            <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+              <div style={{ maxWidth: 760, marginBottom: 48 }}>
+                <Eyebrow color="#5DCAA5" style={{ marginBottom: 14 }}>Service lines</Eyebrow>
+                <h2 style={{
+                  margin: 0, fontSize: 42, fontWeight: 500, letterSpacing: '-0.02em',
+                  color: '#fff', lineHeight: 1.1, textWrap: 'balance',
+                }}>Three service lines. Pick one, or run all three.</h2>
+                <p style={{
+                  margin: '20px 0 0', fontSize: 17, lineHeight: 1.55,
+                  color: '#C4CEE0', maxWidth: '56ch', fontWeight: 300,
+                }}>
+                  Each one runs standalone — you don't have to take the whole bundle.
+                  Start with the lane that hurts the most.
+                </p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+                <ServiceCard
+                  variant="dark"
+                  eyebrow="Service line 01"
+                  title="Medication prior authorization & access"
+                  body="Full-service medication prior auth, appeals, and patient-assistance enrollment — from the moment a med is prescribed to the next follow-up. 94% approval rate. Closed-loop documentation back to your chart."
+                />
+                <ServiceCard
+                  variant="dark"
+                  eyebrow="Service line 02"
+                  title="Priority Care — remote chronic care management"
+                  body="Pharmacist-led chronic care across your panel. Titration, medication optimization, and monthly coordination between visits."
+                />
+                <ServiceCard
+                  variant="dark"
+                  eyebrow="Service line 03"
+                  title="Priority Care — GLP-1 Focus"
+                  tag="Launching July 2026"
+                  body="As GLP-1 access expands and demand surges, our team handles the complexity — coverage, education, deprescribing, and care coordination — so you can focus on the patient, not the paperwork."
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* 6. HOW WE EMBED — onboarding sequence */}
+          <HowWeEmbed />
+
+          {/* 7. HOW WE WORK — ArcSteps (Listen / Investigate / Solve / Stay) */}
+          <ArcSteps variant="light" />
+
+          {/* 8. TESTIMONIALS — real quotes from partners + Google 5.0 */}
+          <Testimonials />
+
+          {/* 9. CLOSING CTA */}
+          <CtaBlock
+            eyebrow="Next step"
+            headline="See what a pharmacy team embedded in your practice actually looks like."
+            note="Based in Nebraska. Actively expanding — if you're out of state, we want to hear from you."
+            primaryCta={{ label: 'Book a walk-through', onClick: () => go('contact') }}
+            secondaryCta={{ label: 'Back to home', onClick: () => go('home') }}
+          />
+
+          <Footer />
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<ProvidersPage />);
+  </script>
+</body>
+</html>

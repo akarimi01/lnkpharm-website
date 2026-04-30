@@ -1,0 +1,209 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   LNK Pharmacy Solutions — Design Tokens
+   Palette: "Twilight Navy + Warm White Canvas"
+   Typography: Figtree (300/400/500/600)
+
+   Balance rules:
+     - Patient pages        → light-dominant (canvas body, navy hero/CTA/footer)
+     - Provider pages       → dark-dominant (navy body, teal+orange accents)
+     - Health-system/ACO    → dark-dominant editorial (navy, generous space)
+     - Homepage             → mixed (navy hero, canvas body, navy CTA)
+   ────────────────────────────────────────────────────────────────────────── */
+
+@import url('./fonts/figtree.css');
+
+:root {
+  /* ─── Core palette ─── */
+  --navy-primary:       #1E2F4A;   /* "Twilight" — primary */
+  --navy-panel:         #2A3F5C;   /* nested cards on navy */
+  --navy-deep:          #0F1A2E;   /* footer, deepest emphasis */
+
+  --canvas:             #FAF8F4;   /* warm white — page bg */
+  --cream:              #F0EBE0;   /* secondary warm surface */
+  --canvas-border:      #EDE8DE;   /* dividers on warm white */
+
+  --teal-accent:        #14B8A6;   /* links, outline borders, highlights */
+  --teal-light:         #5DCAA5;   /* logo on navy, softer borders */
+
+  --orange-cta:         #E8710A;   /* EVERY primary action button */
+  --orange-cta-hover:   #C95F04;   /* 10% darker for hover */
+  --orange-cta-press:   #A84F02;   /* deeper press state */
+
+  /* ─── Text on warm white canvas ─── */
+  --fg-on-canvas:       #1A1A1A;   /* body */
+  --fg-on-canvas-muted: #64748B;   /* supporting/muted */
+  --fg-on-canvas-head:  #1E2F4A;   /* headline weight text */
+
+  /* ─── Text on navy ─── */
+  --fg-on-navy:         #FFFFFF;
+  --fg-on-navy-muted:   #C4CEE0;
+  --fg-on-navy-accent:  #5DCAA5;
+
+  /* ─── Semantic tokens (context-agnostic) ─── */
+  --bg:                 var(--canvas);
+  --bg-alt:             var(--cream);
+  --surface:            #FFFFFF;
+  --border:             var(--canvas-border);
+  --fg:                 var(--fg-on-canvas);
+  --fg-muted:           var(--fg-on-canvas-muted);
+  --fg-head:            var(--fg-on-canvas-head);
+  --accent:             var(--teal-accent);
+  --cta:                var(--orange-cta);
+  --cta-hover:          var(--orange-cta-hover);
+
+  /* ─── Typography ─── */
+  --font-sans: "Figtree", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, sans-serif;
+
+  /* Type scale — spec mandates these sizes */
+  --fs-h1:     48px;
+  --fs-h2:     36px;
+  --fs-h3:     24px;
+  --fs-h4:     18px;
+  --fs-body:   16px;
+  --fs-small:  14px;
+  --fs-caption:12px;
+
+  /* Weights — 500 for headlines, 400 for body; NEVER 600/700 for body */
+  --fw-light:      300;
+  --fw-regular:    400;
+  --fw-medium:     500;  /* default headline weight */
+  --fw-semibold:   600;  /* reserved for UI emphasis, never body */
+
+  /* Line heights */
+  --lh-tight:  1.15;
+  --lh-snug:   1.3;
+  --lh-normal: 1.5;
+  --lh-relaxed:1.65;
+
+  /* Letter-spacing for eyebrow labels (sentence case everywhere else) */
+  --ls-eyebrow: 0.08em;
+
+  /* ─── Spacing scale (4px base) ─── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10: 128px;
+
+  /* ─── Radii ─── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:  12px;
+  --radius-xl:  20px;
+  --radius-pill:999px;
+
+  /* ─── Elevation (low — brand is editorial, not glossy) ─── */
+  --shadow-xs: 0 1px 2px rgba(15, 26, 46, 0.06);
+  --shadow-sm: 0 2px 6px rgba(15, 26, 46, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 26, 46, 0.10);
+  --shadow-lg: 0 20px 48px rgba(15, 26, 46, 0.16);
+  /* Inner hairline used on teal outline buttons */
+  --shadow-inner-hairline: inset 0 0 0 1.5px currentColor;
+
+  /* ─── Layout ─── */
+  --container-max: 1200px;
+  --container-pad: 24px;
+  --container-narrow: 760px;  /* editorial long-form */
+
+  /* ─── Motion ─── */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   360ms;
+}
+
+/* ─── Dark-dominant (provider / health-system) context ─── */
+[data-context="navy"] {
+  --bg:       var(--navy-primary);
+  --bg-alt:   var(--navy-panel);
+  --surface:  var(--navy-panel);
+  --border:   rgba(255,255,255,0.10);
+  --fg:       var(--fg-on-navy);
+  --fg-muted: var(--fg-on-navy-muted);
+  --fg-head:  var(--fg-on-navy);
+  --accent:   var(--teal-light);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Element defaults
+   ────────────────────────────────────────────────────────────────────────── */
+
+html { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  color: var(--fg-head);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-h2); letter-spacing: -0.015em; }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+p {
+  margin: 0 0 1em;
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+small { font-size: var(--fs-small); color: var(--fg-muted); }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { text-decoration: underline; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: var(--space-6) 0;
+}
+
+/* ─── Eyebrow label — the ONLY uppercase treatment ─── */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Utility: container ─── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}

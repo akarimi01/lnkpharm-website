@@ -1,0 +1,33 @@
+# Netlify build settings + headers
+# Pretty URLs (drop .html extension)
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+# Security & performance headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Long cache for static assets (fonts, images, css)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Pretty URLs without trailing .html
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true

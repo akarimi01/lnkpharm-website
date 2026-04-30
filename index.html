@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78M94RK5H6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-78M94RK5H6');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wjzqqkyqda");
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LNK Pharmacy Solutions — The pharmacy team you always needed but never had.</title>
+  <link rel="stylesheet" href="fonts/figtree.css">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Figtree", system-ui, sans-serif;
+      background: #FAF8F4;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    #root { min-height: 100vh; }
+    a { color: inherit; }
+    ::selection { background: rgba(20,184,166,0.22); }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <meta name="ext-resource-dependency" content="assets/logo-dark-context.svg">
+  <meta name="ext-resource-dependency" content="assets/logo-light-context.svg">
+</head>
+<body>
+  
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <rect width="400" height="400" fill="#1E2F4A"/>
+      <g transform="translate(200 210)">
+        <path d="M -80 60 Q -82 58 -78 55 L -18 -68 Q -15 -74 -12 -70 L 70 58 Q 72 61 68 62 L -75 61 Q -79 61 -80 60 Z"
+              fill="none" stroke="#5DCAA5" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M -14 -62 L 64 58" fill="none" stroke="#5DCAA5" stroke-width="1.8" opacity=".5"/>
+      </g>
+      <text x="200" y="340" text-anchor="middle" font-family="Figtree, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FAF8F4" letter-spacing="0.5">LNK · Home</text>
+    </svg>
+  </template>
+  <div id="root"></div>
+
+  <!-- Primitives first -->
+  <script type="text/babel" data-presets="react" src="components/Button.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Header.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Footer.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/Hero.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/StatRow.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ServiceCard.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/PatientStoryCard.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ArcSteps.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/CtaBlock.jsx"></script>
+
+  <!-- Homepage-specific composite blocks -->
+  <script type="text/babel" data-presets="react" src="components/HomeHero.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/WhoWeAre.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/AudienceDoorways.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/ServicesPanel.jsx"></script>
+  <script type="text/babel" data-presets="react" src="components/PatientQuote.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    // Tweakable defaults persisted to the file via the host edit-mode protocol.
+    const TWEAKS = /*EDITMODE-BEGIN*/{
+      "heroLayout": "left-aligned",
+      "heroCtas": "three-role-buttons",
+      "audienceRibbonStyle": "top-accent-bar",
+      "servicesTone": "navy-dominant",
+      "quoteTreatment": "editorial-pullquote",
+      "arcStepsVariant": "light"
+    }/*EDITMODE-END*/;
+
+    const App = () => {
+      const [route, setRoute] = React.useState('home');
+      const [tweaks, setTweaks] = React.useState(TWEAKS);
+      const [tweakPanel, setTweakPanel] = React.useState(false);
+
+      // Edit-mode protocol
+      React.useEffect(() => {
+        const onMsg = (e) => {
+          const d = e.data || {};
+          if (d.type === '__activate_edit_mode') setTweakPanel(true);
+          if (d.type === '__deactivate_edit_mode') setTweakPanel(false);
+        };
+        window.addEventListener('message', onMsg);
+        // announce AFTER listener is registered
+        try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch {}
+        return () => window.removeEventListener('message', onMsg);
+      }, []);
+
+      const setTweak = (k, v) => {
+        setTweaks(t => ({ ...t, [k]: v }));
+        try {
+          window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [k]: v } }, '*');
+        } catch {}
+      };
+
+      const go = (r) => {
+        if (r === 'providers') { window.location.href = 'providers.html'; return; }
+        if (r === 'patients') { window.location.href = 'patients.html'; return; }
+        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
+        if (r === 'contact') { window.location.href = 'contact.html'; return; }
+        if (r === 'about') { window.location.href = 'about.html'; return; }
+        setRoute(r);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      return (
+        <div data-screen-label="01 Home">
+          <Header context="dark" current="home" onNavigate={go} />
+
+          {/* 1. HERO — navy dominant with 3-role CTAs */}
+          {tweaks.heroLayout === 'centered' ? (
+            <CenteredHero tweaks={tweaks} onSelect={go} />
+          ) : (
+            <HomeHero onSelect={go} />
+          )}
+
+          {/* 2. WHO WE SERVE — three-audience ribbon (orientation first) */}
+          <AudienceDoorways onSelect={go} />
+
+          {/* 3. WHO WE ARE — warm white editorial */}
+          <WhoWeAre />
+
+          {/* 4. HOW WE WORK — 4-stage arc */}
+          <ArcSteps variant={tweaks.arcStepsVariant === 'dark' ? 'dark' : 'light'} />
+
+          {/* 5. PROOF STRIP — 94 / 30+ / 250+ / $0 */}
+          <StatRow
+            variant="light"
+            stats={[
+              { value: '9,000', unit: '+', caption: 'Patient cases resolved since July 2023.' },
+              { value: '94', unit: '%', caption: 'Medication prior authorization approval rate.' },
+              { value: '30', unit: 'hrs', caption: 'Clinical staff time returned weekly per partner.' },
+              { value: '$0',            caption: 'EMR replacement cost — we embed, we don\'t replace.' },
+            ]}
+          />
+
+          {/* 6. SERVICES — navy dominant */}
+          {tweaks.servicesTone === 'canvas' ? (
+            <CanvasServices />
+          ) : (
+            <ServicesPanel />
+          )}
+
+          {/* 7. PATIENT STORY — "Nobody had asked her" quote */}
+          <PatientQuote />
+
+          {/* 8. CLOSING CTA — navy deep book a walk-through */}
+          <CtaBlock
+            eyebrow="Next step"
+            headline="Book a walk-through and see what a pharmacy team actually looks like."
+            primaryCta={{ label: 'Book a walk-through', onClick: () => go('contact') }}
+            secondaryCta={{ label: 'Read patient stories', onClick: () => go('stories') }}
+          />
+
+          <Footer />
+
+          {tweakPanel && <TweaksPanel tweaks={tweaks} setTweak={setTweak} onClose={() => setTweakPanel(false)} />}
+        </div>
+      );
+    };
+
+    // ---- Alt Hero: centered headline variant (exposed via Tweaks) ----
+    const CenteredHero = ({ onSelect }) => (
+      <section style={{
+        background: '#1E2F4A',
+        padding: '128px 24px 136px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <svg width="340" height="340" viewBox="0 0 130 130"
+             style={{ position: 'absolute', right: -70, top: -70, opacity: 0.08 }}>
+          <path d="M 20 110 Q 18 108 22 105 L 62 22 Q 65 16 68 20 L 110 108 Q 112 111 108 112 L 25 111 Q 21 111 20 110 Z"
+                fill="none" stroke="#5DCAA5" strokeWidth="2.5" strokeLinejoin="round"/>
+        </svg>
+        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <Eyebrow color="#5DCAA5" style={{ marginBottom: 22 }}>
+            The pharmacy team you always needed
+          </Eyebrow>
+          <h1 style={{
+            margin: 0, fontSize: 62, fontWeight: 500, letterSpacing: '-0.025em',
+            lineHeight: 1.04, color: '#fff', textWrap: 'balance',
+          }}>A pharmacist working alongside your care team.</h1>
+          <p style={{
+            margin: '26px auto 0', fontSize: 19, lineHeight: 1.55, color: '#C4CEE0',
+            maxWidth: '58ch', fontWeight: 400, textWrap: 'pretty',
+          }}>
+            Prior authorizations, medication access, and chronic disease
+            management — the clinical work clinics never had time for, and
+            patients shouldn't have to navigate alone.
+          </p>
+          <div style={{ display: 'flex', gap: 12, marginTop: 40, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button size="lg" variant="primary" onClick={() => onSelect('patients')}>I'm a patient →</Button>
+            <Button size="lg" variant="secondary-dark" onClick={() => onSelect('providers')}>I'm a provider →</Button>
+            <Button size="lg" variant="secondary-dark" onClick={() => onSelect('health-systems')}>I'm a health system →</Button>
+          </div>
+        </div>
+      </section>
+    );
+
+    // ---- Alt Services: canvas version ----
+    const CanvasServices = () => (
+      <section style={{ background: '#FAF8F4', padding: '120px 24px', borderTop: '1px solid #EDE8DE' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ maxWidth: 760, marginBottom: 56 }}>
+            <Eyebrow style={{ marginBottom: 16 }}>What we do</Eyebrow>
+            <h2 style={{ margin: 0, fontSize: 44, fontWeight: 500, letterSpacing: '-0.02em', color: '#1E2F4A', lineHeight: 1.08, textWrap: 'balance' }}>
+              Three services. One accountable team.
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <ServiceCard variant="light" eyebrow="Service line 01" title="Medication prior authorization & access" body="Full-service medication prior auth, appeals, and patient-assistance enrollment. 94% approval rate. Closed-loop documentation back to your chart." />
+            <ServiceCard variant="light" eyebrow="Service line 02" title="Priority Care — chronic care management" body="Pharmacist-led chronic care across your panel. Titration, medication optimization, and monthly coordination between visits." />
+            <ServiceCard variant="light" eyebrow="Service line 03" title="Priority Care — GLP-1 Focus" tag="Launching July 2026" body="As GLP-1 access expands and demand surges, our team handles the complexity — coverage, education, deprescribing, and care coordination — so you can focus on the patient, not the paperwork." />
+          </div>
+        </div>
+      </section>
+    );
+
+    // ---- Tweaks panel ----
+    const TweaksPanel = ({ tweaks, setTweak, onClose }) => {
+      const row = { display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 };
+      const label = { fontSize: 11, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748B' };
+      const btn = (active) => ({
+        padding: '7px 12px',
+        fontSize: 12,
+        fontWeight: 500,
+        borderRadius: 6,
+        border: '1px solid ' + (active ? '#14B8A6' : '#EDE8DE'),
+        background: active ? 'rgba(20,184,166,0.1)' : '#fff',
+        color: active ? '#0E8F81' : '#1E2F4A',
+        cursor: 'pointer',
+        fontFamily: 'Figtree',
+      });
+      const Opt = ({ k, v, children }) => (
+        <button style={btn(tweaks[k] === v)} onClick={() => setTweak(k, v)}>{children}</button>
+      );
+      return (
+        <div style={{
+          position: 'fixed', right: 20, bottom: 20, zIndex: 80,
+          background: '#fff', border: '1px solid #EDE8DE', borderRadius: 12,
+          padding: 22, width: 320, boxShadow: '0 20px 48px rgba(15,26,46,0.18)',
+          fontFamily: 'Figtree',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#1E2F4A' }}>Tweaks</div>
+            <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', fontSize: 18, color: '#64748B' }}>×</button>
+          </div>
+
+          <div style={row}>
+            <div style={label}>Hero layout</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              <Opt k="heroLayout" v="left-aligned">Left aligned</Opt>
+              <Opt k="heroLayout" v="centered">Centered</Opt>
+            </div>
+          </div>
+
+          <div style={row}>
+            <div style={label}>Services tone</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              <Opt k="servicesTone" v="navy-dominant">Navy</Opt>
+              <Opt k="servicesTone" v="canvas">Canvas</Opt>
+            </div>
+          </div>
+
+          <div style={row}>
+            <div style={label}>How-we-work band</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              <Opt k="arcStepsVariant" v="light">Warm white</Opt>
+              <Opt k="arcStepsVariant" v="dark">Navy</Opt>
+            </div>
+          </div>
+
+          <div style={{ fontSize: 11, color: '#64748B', lineHeight: 1.5, marginTop: 12, borderTop: '1px solid #EDE8DE', paddingTop: 12 }}>
+            Tweaks explore layout variants without breaking the brand system. Each choice persists to the file.
+          </div>
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
