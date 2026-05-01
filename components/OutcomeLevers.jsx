@@ -180,7 +180,7 @@ const OutcomeLevers = () => {
               Specific code mappings, measure-level performance, and partner-level outcomes are shared on the strategy call.
             </div>
           </div>
-          <a href="Contact.html" style={{
+          <a href="contact.html" style={{
             fontSize: 14, fontWeight: 500, color: '#0E8F81',
             textDecoration: 'none', whiteSpace: 'nowrap',
           }}>Request the brief →</a>
