@@ -110,7 +110,7 @@ const AudienceDoorways = ({ onSelect }) => (
         <AudienceDoorway
           tonal="patient"
           eyebrow="For patients"
-          title="When healthcare gets confusing, we fight for you."
+          title="When healthcare gets confusing, we advocate for you."
           body="Affordability, medication prior auths, understanding your treatment — someone real to call when something isn't right."
           linkLabel="Visit the patient site"
           accent="#E8710A"
