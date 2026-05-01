@@ -20,9 +20,6 @@ const FinancialCase = () => (
         }}>
           Designed to pay for itself before it expands.
         </h2>
-        <p style={{ margin: '20px 0 0', fontSize: 18, lineHeight: 1.55, color: '#64748B', maxWidth: '60ch' }}>
-          Economics typically close inside the first quarter. Four revenue sources — and a 90-day pilot to prove it.
-        </p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>

@@ -33,21 +33,21 @@ const AboutOrigin = () => (
           maxWidth: '58ch',
         }}>
           <p style={{ margin: '0 0 20px' }}>
-            Prescriptions go unfilled. Prior authorizations stall. Care fragments
-            at every handoff. None of it is anyone's job to fix — until something
-            goes wrong, and then it's everyone's problem at once.
+            Prescriptions go unfilled. Prior auths stall. Care fragments at
+            every handoff — until something goes wrong, and it's suddenly
+            everyone's problem.
           </p>
           <p style={{ margin: '0 0 20px' }}>
             We started LNK because the gap between the appointment and the
-            outcome is where most patients lose. The provider doesn't have time.
-            The pharmacy isn't paid to coordinate. The insurance company isn't
-            on your side. So patients carry the system on their own — and the
-            ones with the least margin to spare carry the most.
+            outcome is where most patients lose. Providers don't have time.
+            Pharmacies aren't paid to coordinate. Insurers aren't on your
+            side. So patients carry the system alone — and those with the
+            least margin to spare carry the most.
           </p>
           <p style={{ margin: 0 }}>
-            We built the layer that's missing. Pharmacists who pick up the phone,
-            work the prior auth, find the affordable path, and stay with patients
-            between visits — so prescriptions actually become outcomes.
+            We built the layer that's missing — pharmacists who pick up the
+            phone, work the prior auth, find the affordable path, and stay
+            with patients between visits.
           </p>
         </div>
       </div>

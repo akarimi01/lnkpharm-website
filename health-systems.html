@@ -74,11 +74,11 @@
   <script type="text/babel" data-presets="react">
     const HealthSystemsPage = () => {
       const go = (r) => {
-        if (r === 'home') { window.location.href = 'index.html'; return; }
-        if (r === 'contact') { window.location.href = 'contact.html?lane=system'; return; }
-        if (r === 'providers') { window.location.href = 'providers.html'; return; }
-        if (r === 'patients') { window.location.href = 'patients.html'; return; }
-        if (r === 'about') { window.location.href = 'about.html'; return; }
+        if (r === 'home') { window.location.href = 'Homepage.html'; return; }
+        if (r === 'contact') { window.location.href = 'Contact.html?lane=system'; return; }
+        if (r === 'providers') { window.location.href = 'Providers.html'; return; }
+        if (r === 'patients') { window.location.href = 'Patients.html'; return; }
+        if (r === 'about') { window.location.href = 'About.html'; return; }
         if (r === 'health-systems') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       };
@@ -114,7 +114,7 @@
             secondaryCta={{ label: 'Back to home', onClick: () => go('home') }}
           />
 
-          <Footer />
+          <Footer onNavigate={go} />
         </div>
       );
     };

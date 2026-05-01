@@ -22,11 +22,7 @@ const IntegrationBand = () => (
           }}>
             A clinical service — not a software purchase.
           </h2>
-          <p style={{ margin: '22px 0 0', fontSize: 17, lineHeight: 1.65, color: '#1A1A1A', maxWidth: '52ch' }}>
-            No procurement, no RFP, no net-new software. We document directly
-            in your EHR — the system your clinicians already use.
-          </p>
-          <p style={{ margin: '14px 0 0', fontSize: 15, lineHeight: 1.6, color: '#64748B', maxWidth: '52ch' }}>
+          <p style={{ margin: '22px 0 0', fontSize: 15, lineHeight: 1.6, color: '#64748B', maxWidth: '52ch' }}>
             Epic · NextGen · Athena · eClinicalWorks · Elation · Aprima.
           </p>
         </div>

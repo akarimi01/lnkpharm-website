@@ -91,7 +91,7 @@ const AudienceDoorway = ({ eyebrow, title, body, linkLabel, accent, onClick, ton
 const AudienceDoorways = ({ onSelect }) => (
   <section style={{ background: '#F0EBE0', padding: '104px 24px 112px', borderTop: '1px solid #EDE8DE', borderBottom: '1px solid #EDE8DE' }}>
     <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 40, flexWrap: 'wrap', gap: 20 }}>
+      <div style={{ marginBottom: 40 }}>
         <div style={{ maxWidth: 620 }}>
           <Eyebrow style={{ marginBottom: 14 }}>Who we serve</Eyebrow>
           <h2 style={{
@@ -104,12 +104,6 @@ const AudienceDoorways = ({ onSelect }) => (
             textWrap: 'balance',
           }}>Three audiences. One accountable pharmacy team.</h2>
         </div>
-        <div style={{
-          fontSize: 13,
-          color: '#64748B',
-          maxWidth: 280,
-          lineHeight: 1.5,
-        }}>Choose the path that fits you — each one leads to a dedicated experience.</div>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>

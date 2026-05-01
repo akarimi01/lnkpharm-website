@@ -39,7 +39,7 @@ const Header = ({ context = 'light', current = 'home', onNavigate }) => {
           href="#"
           style={{ display: 'flex', alignItems: 'center', gap: 0, cursor: 'pointer' }}
         >
-          <img src={logoSrc} alt="LNK Pharmacy Solutions" style={{ height: 48 }} />
+          <img src={logoSrc} alt="LNK Pharmacy Solutions" style={{ height: 72 }} />
         </a>
         <nav style={{ display: 'flex', gap: 36, marginLeft: 'auto' }}>
           {items.map(it => (

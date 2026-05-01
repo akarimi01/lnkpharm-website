@@ -73,11 +73,11 @@
   <script type="text/babel" data-presets="react">
     const PatientsPage = () => {
       const go = (r) => {
-        if (r === 'home') { window.location.href = 'index.html'; return; }
-        if (r === 'providers') { window.location.href = 'providers.html'; return; }
-        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
-        if (r === 'contact') { window.location.href = 'contact.html'; return; }
-        if (r === 'about') { window.location.href = 'about.html'; return; }
+        if (r === 'home') { window.location.href = 'Homepage.html'; return; }
+        if (r === 'providers') { window.location.href = 'Providers.html'; return; }
+        if (r === 'health-systems') { window.location.href = 'Health Systems.html'; return; }
+        if (r === 'contact') { window.location.href = 'Contact.html'; return; }
+        if (r === 'about') { window.location.href = 'About.html'; return; }
       };
       return (
         <div data-screen-label="05 Patients">
@@ -113,7 +113,7 @@
             secondaryCta={{ label: 'Already a patient? Contact us', onClick: () => go('contact') }}
           />
 
-          <Footer />
+          <Footer onNavigate={go} />
         </div>
       );
     };

@@ -77,12 +77,12 @@
       const [route, setRoute] = React.useState('providers');
 
       const go = (r) => {
-        // Homepage routing: navigate back to index.html for cross-page links
-        if (r === 'home') { window.location.href = 'index.html'; return; }
-        if (r === 'contact') { window.location.href = 'contact.html?lane=provider'; return; }
-        if (r === 'patients') { window.location.href = 'patients.html'; return; }
-        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
-        if (r === 'about') { window.location.href = 'about.html'; return; }
+        // Homepage routing: navigate back to Homepage.html for cross-page links
+        if (r === 'home') { window.location.href = 'Homepage.html'; return; }
+        if (r === 'contact') { window.location.href = 'Contact.html?lane=provider'; return; }
+        if (r === 'patients') { window.location.href = 'Patients.html'; return; }
+        if (r === 'health-systems') { window.location.href = 'Health Systems.html'; return; }
+        if (r === 'about') { window.location.href = 'About.html'; return; }
         if (r === 'about') {
           // For now, stub: stay on page, scroll to top
           setRoute(r);
@@ -131,13 +131,6 @@
                   margin: 0, fontSize: 42, fontWeight: 500, letterSpacing: '-0.02em',
                   color: '#fff', lineHeight: 1.1, textWrap: 'balance',
                 }}>Three service lines. Pick one, or run all three.</h2>
-                <p style={{
-                  margin: '20px 0 0', fontSize: 17, lineHeight: 1.55,
-                  color: '#C4CEE0', maxWidth: '56ch', fontWeight: 300,
-                }}>
-                  Each one runs standalone — you don't have to take the whole bundle.
-                  Start with the lane that hurts the most.
-                </p>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
                 <ServiceCard
@@ -181,7 +174,7 @@
             secondaryCta={{ label: 'Back to home', onClick: () => go('home') }}
           />
 
-          <Footer />
+          <Footer onNavigate={go} />
         </div>
       );
     };

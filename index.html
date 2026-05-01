@@ -112,11 +112,11 @@
       };
 
       const go = (r) => {
-        if (r === 'providers') { window.location.href = 'providers.html'; return; }
-        if (r === 'patients') { window.location.href = 'patients.html'; return; }
-        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
-        if (r === 'contact') { window.location.href = 'contact.html'; return; }
-        if (r === 'about') { window.location.href = 'about.html'; return; }
+        if (r === 'providers') { window.location.href = 'Providers.html'; return; }
+        if (r === 'patients') { window.location.href = 'Patients.html'; return; }
+        if (r === 'health-systems') { window.location.href = 'Health Systems.html'; return; }
+        if (r === 'contact') { window.location.href = 'Contact.html'; return; }
+        if (r === 'about') { window.location.href = 'About.html'; return; }
         setRoute(r);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       };
@@ -170,7 +170,7 @@
             secondaryCta={{ label: 'Read patient stories', onClick: () => go('stories') }}
           />
 
-          <Footer />
+          <Footer onNavigate={go} />
 
           {tweakPanel && <TweaksPanel tweaks={tweaks} setTweak={setTweak} onClose={() => setTweakPanel(false)} />}
         </div>

@@ -69,15 +69,6 @@ const OutcomeLevers = () => {
           }}>
             Four levers. One pharmacist-led layer.
           </h2>
-          <p style={{
-            margin: '20px 0 0',
-            fontSize: 18,
-            lineHeight: 1.55,
-            color: '#64748B',
-            maxWidth: '60ch',
-          }}>
-            Mapped to the measures your contracts and quality submissions already track.
-          </p>
         </div>
 
         <div style={{
@@ -189,7 +180,7 @@ const OutcomeLevers = () => {
               Specific code mappings, measure-level performance, and partner-level outcomes are shared on the strategy call.
             </div>
           </div>
-          <a href="contact.html" style={{
+          <a href="Contact.html" style={{
             fontSize: 14, fontWeight: 500, color: '#0E8F81',
             textDecoration: 'none', whiteSpace: 'nowrap',
           }}>Request the brief →</a>

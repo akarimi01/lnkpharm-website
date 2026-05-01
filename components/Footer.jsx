@@ -1,5 +1,5 @@
 // Footer.jsx — navy deep footer, consistent across every page.
-const Footer = () => (
+const Footer = ({ onNavigate }) => (
   <footer style={{
     background: '#0F1A2E',
     color: '#C4CEE0',
@@ -20,9 +20,13 @@ const Footer = () => (
           </p>
         </div>
         {[
-          { title: 'For patients', links: ['Someone in your corner', 'Affordability', 'Understanding your meds', 'Between visits'] },
-          { title: 'For providers', links: ['Medication prior auth', 'Priority Care', 'GLP-1 Focus', 'Integration'] },
-          { title: 'Company', links: ['Our approach', 'Patient stories', 'About', 'Careers', 'Contact'] },
+          { title: 'For patients', route: 'patients', links: [{ label: 'Visit the patient site', route: 'patients' }] },
+          { title: 'For providers', route: 'providers', links: [{ label: 'See how we embed', route: 'providers' }] },
+          { title: 'For health systems', route: 'health-systems', links: [{ label: 'Read the brief', route: 'health-systems' }] },
+          { title: 'Company', links: [
+            { label: 'About', route: 'about' },
+            { label: 'Contact', route: 'contact' },
+          ] },
         ].map(col => (
           <div key={col.title}>
             <div style={{
@@ -35,7 +39,13 @@ const Footer = () => (
             }}>{col.title}</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
               {col.links.map(l => (
-                <li key={l}><a href="#" style={{ color: '#fff', fontSize: 14, textDecoration: 'none' }}>{l}</a></li>
+                <li key={l.label}>
+                  <a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(l.route); }}
+                    style={{ color: '#fff', fontSize: 14, textDecoration: 'none' }}
+                  >{l.label}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -49,11 +59,7 @@ const Footer = () => (
         color: '#C4CEE0',
       }}>
         <div>© 2026 LNK Pharmacy Solutions.</div>
-        <div style={{ display: 'flex', gap: 20 }}>
-          <a href="#" style={{ color: '#C4CEE0' }}>Privacy</a>
-          <a href="#" style={{ color: '#C4CEE0' }}>Terms</a>
-          <a href="#" style={{ color: '#C4CEE0' }}>HIPAA</a>
-        </div>
+        <div>Lincoln, Nebraska · Serving partners nationwide</div>
       </div>
     </div>
   </footer>

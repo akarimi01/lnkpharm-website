@@ -26,17 +26,6 @@ const ServicesPanel = () => (
           lineHeight: 1.08,
           textWrap: 'balance',
         }}>Three service lines. Pick one, or run all three.</h2>
-        <p style={{
-          margin: '20px 0 0',
-          fontSize: 18,
-          lineHeight: 1.55,
-          color: '#C4CEE0',
-          maxWidth: '56ch',
-          fontWeight: 300,
-        }}>
-          One pharmacist-led team. Same rigor for thirty patients or three hundred.
-          Documented in your EHR.
-        </p>
       </div>
 
       <div style={{

@@ -78,18 +78,6 @@ const ScopeOfPractice = () => {
             lineHeight: 1.1,
             textWrap: 'balance',
           }}>You prescribe. You decide. We do the work around it.</h2>
-          <p style={{
-            margin: '20px 0 0',
-            fontSize: 18,
-            lineHeight: 1.55,
-            color: '#1A1A1A',
-            maxWidth: '62ch',
-            textWrap: 'pretty',
-          }}>
-            Collaborative, not substitutive. Every prescribing decision stays
-            yours — we document, coordinate, and close loops so your team gets
-            time back, not reorganized.
-          </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>

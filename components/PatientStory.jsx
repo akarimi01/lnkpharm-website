@@ -25,22 +25,15 @@ const PatientStory = () => (
             medications. She couldn't afford any of them.
           </p>
           <p>
-            She earned too much for Medicare's low-income program but not
-            enough to cover hundreds in monthly copays on top of rent and
-            groceries. The system she was navigating wasn't built for someone
-            like her to figure out alone.
+            She earned too much to qualify for assistance, but not enough to
+            cover hundreds in monthly copays on top of rent and groceries.
           </p>
           <p>
-            So we called. We didn't start with the prescriptions — we started
-            by asking how she was doing. Then we went to work: one medication
+            We called. We listened first, then went to work — one medication
             covered through a manufacturer program, one sourced through a
-            transparent online pharmacy, one explained so she knew her current
-            copay was already the best deal.
-          </p>
-          <p>
-            By the end of the call, she was crying — because someone had
-            finally treated her medication costs as a solvable problem
-            instead of her burden to carry.
+            transparent pharmacy, one explained so she knew her copay was
+            already the best deal. By the end of the call, her medication
+            costs were finally a solved problem, not her burden to carry.
           </p>
         </div>
 

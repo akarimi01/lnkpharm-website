@@ -124,14 +124,6 @@ const Testimonials = () => {
                 fontWeight: 400,
                 flex: 1,
               }}>
-                <span style={{
-                  fontSize: 36,
-                  lineHeight: 0,
-                  color: q.accent,
-                  fontWeight: 500,
-                  verticalAlign: '-8px',
-                  marginRight: 2,
-                }}>“</span>
                 {q.quote}
               </p>
 

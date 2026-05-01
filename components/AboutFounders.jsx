@@ -206,7 +206,7 @@ const AboutFounders = () => {
               'Rebuilt the patient experience at the counter from the ground up',
               'Deep operational fluency with insurance and PBM workflows',
             ]}
-            whyLNK="From the counter, Thomas saw the other half of the broken system: patients arriving for medications they couldn't afford, couldn't get covered, or didn't understand. The problems started upstream of the pharmacy, where nobody had the time or authority to solve them. He co-founded LNK to fix them upstream — and today leads partnerships and operations."
+            whyLNK="From the counter, TJ saw the other half of the broken system: patients arriving for medications they couldn't afford, couldn't get covered, or didn't understand. The problems started upstream of the pharmacy, where nobody had the time or authority to solve them. He co-founded LNK to fix them upstream — and today leads partnerships and operations."
           />
         </div>
       </div>

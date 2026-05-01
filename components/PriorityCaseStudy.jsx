@@ -11,17 +11,6 @@ const PriorityCaseStudy = () => (
     <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
       <div style={{ maxWidth: 780, marginBottom: 56 }}>
         <Eyebrow color="#5DCAA5" style={{ marginBottom: 16 }}>Partner proof</Eyebrow>
-        <h2 style={{
-          margin: 0,
-          fontSize: 44,
-          fontWeight: 500,
-          letterSpacing: '-0.02em',
-          color: '#fff',
-          lineHeight: 1.1,
-          textWrap: 'balance',
-        }}>
-          What a cardiology specialty group got back in Q1 of our partnership.
-        </h2>
       </div>
 
       <div style={{
@@ -52,7 +41,7 @@ const PriorityCaseStudy = () => (
             {[
               { k: 'Service line', v: 'Medication prior authorization + access' },
               { k: 'Integration', v: 'Direct EHR documentation, no system swap' },
-              { k: 'Scope growth', v: 'Expanded to chronic care support in month 3' },
+              { k: 'Scope growth', v: 'Expanded to a pharmacist-led chronic care management and remote therapy monitoring program' },
             ].map((r, i) => (
               <div key={i}>
                 <div style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#7E8BA3', marginBottom: 3 }}>{r.k}</div>

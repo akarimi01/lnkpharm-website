@@ -16,14 +16,6 @@ const PatientQuote = () => (
         color: '#1E2F4A',
         textWrap: 'balance',
       }}>
-        <span style={{
-          fontSize: 64,
-          lineHeight: 0,
-          color: '#14B8A6',
-          fontWeight: 500,
-          verticalAlign: '-12px',
-          marginRight: 4,
-        }}>“</span>
         Healthcare is complicated.
         <br />
         <span style={{ color: '#1E2F4A' }}>She didn't know where to start. Then LNK stepped in.</span>
