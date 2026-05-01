@@ -14,7 +14,7 @@ const Testimonials = () => {
       kind: 'Clinic staff',
       accent: '#14B8A6',
       quote: "They've helped us with medication prior authorizations, financial assistance, and been a great resource for so many patient questions. Extremely efficient, very knowledgeable, and they go above and beyond.",
-      name: 'Christine Klabunde, RN',
+      name: 'Christine, Lead RN',
       role: 'Pioneer Heart Institute',
     },
     {

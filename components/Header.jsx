@@ -1,6 +1,23 @@
 // Header.jsx — site header. Adapts between canvas (light) and navy (dark) contexts.
-// Logo auto-swaps based on `context` prop.
+// Logo auto-swaps based on `context` prop. Includes mobile hamburger menu.
 const Header = ({ context = 'light', current = 'home', onNavigate }) => {
+  const [isMobile, setIsMobile] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth <= 768
+  );
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // Close menu when navigating
+  const handleNav = (id) => {
+    setMenuOpen(false);
+    onNavigate && onNavigate(id);
+  };
+
   const isDark = context === 'dark';
   const bg = isDark ? '#1E2F4A' : '#FAF8F4';
   const border = isDark ? 'rgba(255,255,255,0.08)' : '#EDE8DE';
@@ -29,38 +46,119 @@ const Header = ({ context = 'light', current = 'home', onNavigate }) => {
       <div style={{
         maxWidth: 1200,
         margin: '0 auto',
-        padding: '18px 24px',
+        padding: isMobile ? '12px 18px' : '18px 24px',
         display: 'flex',
         alignItems: 'center',
-        gap: 40,
+        gap: isMobile ? 12 : 40,
       }}>
         <a
-          onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }}
+          onClick={(e) => { e.preventDefault(); handleNav('home'); }}
           href="#"
           style={{ display: 'flex', alignItems: 'center', gap: 0, cursor: 'pointer' }}
         >
-          <img src={logoSrc} alt="LNK Pharmacy Solutions" style={{ height: 72 }} />
+          <img src={logoSrc} alt="LNK Pharmacy Solutions" style={{ height: isMobile ? 48 : 72 }} />
         </a>
-        <nav style={{ display: 'flex', gap: 36, marginLeft: 'auto' }}>
+
+        {/* Desktop nav */}
+        {!isMobile && (
+          <nav style={{ display: 'flex', gap: 36, marginLeft: 'auto' }}>
+            {items.map(it => (
+              <a
+                key={it.id}
+                href="#"
+                onClick={(e) => { e.preventDefault(); handleNav(it.id); }}
+                style={{
+                  fontSize: 17,
+                  fontWeight: 400,
+                  color: current === it.id ? (isDark ? '#5DCAA5' : '#14B8A6') : fg,
+                  textDecoration: 'none',
+                  letterSpacing: '-0.005em',
+                  paddingBottom: 2,
+                  borderBottom: current === it.id ? `1.5px solid ${isDark ? '#5DCAA5' : '#14B8A6'}` : '1.5px solid transparent',
+                  transition: 'color 120ms',
+                }}
+              >{it.label}</a>
+            ))}
+          </nav>
+        )}
+
+        {/* Mobile hamburger */}
+        {isMobile && (
+          <button
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            style={{
+              marginLeft: 'auto',
+              background: 'transparent',
+              border: 'none',
+              padding: 8,
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 5,
+              width: 44,
+              height: 44,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <span style={{
+              display: 'block',
+              width: 22,
+              height: 2,
+              background: fg,
+              transition: 'transform 200ms',
+              transform: menuOpen ? 'translateY(7px) rotate(45deg)' : 'none',
+            }} />
+            <span style={{
+              display: 'block',
+              width: 22,
+              height: 2,
+              background: fg,
+              opacity: menuOpen ? 0 : 1,
+              transition: 'opacity 150ms',
+            }} />
+            <span style={{
+              display: 'block',
+              width: 22,
+              height: 2,
+              background: fg,
+              transition: 'transform 200ms',
+              transform: menuOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
+            }} />
+          </button>
+        )}
+      </div>
+
+      {/* Mobile menu panel */}
+      {isMobile && menuOpen && (
+        <nav style={{
+          background: bg,
+          borderTop: `1px solid ${border}`,
+          padding: '8px 18px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
           {items.map(it => (
             <a
               key={it.id}
               href="#"
-              onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(it.id); }}
+              onClick={(e) => { e.preventDefault(); handleNav(it.id); }}
               style={{
-                fontSize: 17,
-                fontWeight: 400,
+                display: 'block',
+                padding: '16px 4px',
+                fontSize: 18,
+                fontWeight: 500,
                 color: current === it.id ? (isDark ? '#5DCAA5' : '#14B8A6') : fg,
                 textDecoration: 'none',
+                borderBottom: `1px solid ${border}`,
                 letterSpacing: '-0.005em',
-                paddingBottom: 2,
-                borderBottom: current === it.id ? `1.5px solid ${isDark ? '#5DCAA5' : '#14B8A6'}` : '1.5px solid transparent',
-                transition: 'color 120ms',
               }}
             >{it.label}</a>
           ))}
         </nav>
-      </div>
+      )}
     </header>
   );
 };
