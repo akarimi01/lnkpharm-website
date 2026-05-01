@@ -79,11 +79,11 @@
 
       const go = (r) => {
         // Homepage routing: navigate back to Homepage.html for cross-page links
-        if (r === 'home') { window.location.href = 'index.html'; return; }
-        if (r === 'contact') { window.location.href = 'contact.html?lane=provider'; return; }
-        if (r === 'patients') { window.location.href = 'patients.html'; return; }
-        if (r === 'health-systems') { window.location.href = 'health-systems.html'; return; }
-        if (r === 'about') { window.location.href = 'about.html'; return; }
+        if (r === 'home') { window.location.href = '/'; return; }
+        if (r === 'contact') { window.location.href = '/contact?lane=provider'; return; }
+        if (r === 'patients') { window.location.href = '/patients'; return; }
+        if (r === 'health-systems') { window.location.href = '/health-systems'; return; }
+        if (r === 'about') { window.location.href = '/about'; return; }
         if (r === 'about') {
           // For now, stub: stay on page, scroll to top
           setRoute(r);
